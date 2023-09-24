@@ -7,7 +7,7 @@ with the smallest (non-negative) difference. Return the difference.
  Examples:
  const a = [1, 3, 15, 11, 2];
  const b = [23, 127, 235, 19, 8];
- // output: 3
+ output: 3
 */
 
 //* ---- FUNCION ----
