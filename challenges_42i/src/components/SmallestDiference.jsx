@@ -4,31 +4,38 @@ import { smallestDifference } from "./Function";
 export const SmallestDiference = () => {
   // ---- Variables de estado ----
   const [result, setResult] = useState(0);
-  const [coins, setCoins] = useState([]);
-  const [input, setInput] = useState("");
+  const [array1, setArray1] = useState([23, 127, 235, 19, 8]);
+  const [array2, setArray2] = useState([27, 127, 237, 17, 7]);
+  const [inputArray1, setInputArray1] = useState("");
+  const [inputArray2, setInputArray2] = useState("");
 
   // ---- Funciones ----
-  function calculoMenorCambio() {
-    // const menorNum = sinCambio(coins);
-    setResult(menorNum);
+  function smallDiference() {
+    const result = smallestDifference(array1, array2);
+    setResult(result);
   }
 
-  function handleChange(e) {
-    const { value } = e.target;
-    setInput(value);
+  function handleChange(e, setInputArray) {
+    const { value, name } = e.target;
+    console.log(
+      "🚀 ~ file: SmallestDiference.jsx:20 ~ handleChange ~ name:",
+      name
+    );
+    setInputArray(value);
   }
 
-  function addNumber() {
-    if (input === "") return;
-    const numero = parseInt(input);
-    setCoins([...coins, numero]);
-    setInput("");
+  function addNumber(inputArray, setInputArray, setArray, array) {
+    if (inputArray === "") return;
+    const numero = parseInt(inputArray);
+    setArray([...array, numero]);
+    setInputArray("");
   }
 
-  function clearCoins() {
-    setCoins([]);
+  function clearCoins(setArray, setInputArray) {
+    setArray([]);
+    // setArray2([]);
     setResult(0);
-    setInput("");
+    setInputArray("");
   }
   // ---- Funciones ----
 
@@ -47,61 +54,104 @@ export const SmallestDiference = () => {
       </div>
 
       {/* ---------- NUEVA TAREA ---------- */}
-      <div className="m-2 flex items-center">
+      <div className="m-2 items-center">
         <input
-          className="appearance-none h-8 w-5/12 bg-gray-100 text-gray-700 border border-gray-500 py-3 px-4 leading-tight focus:outline-none focus:bg-white rounded-l-lg"
-          value={input}
+          className="appearance-none h-6 mb-2  w-5/12 bg-gray-100 text-gray-700 border border-gray-500 py-3 px-4 leading-tight focus:outline-none focus:bg-white rounded-l-lg"
+          value={inputArray1}
           type="number"
-          onChange={handleChange}
-          onKeyDown={(e) => (e.key === "Enter" ? addNumber() : null)}
-          placeholder="Ingrese un numero"
+          onChange={() => handleChange(event, setInputArray1)}
+          onKeyDown={(e) =>
+            e.key === "Enter"
+              ? addNumber(inputArray1, setInputArray1, setArray1, array1)
+              : null
+          }
+          placeholder="Array 1"
         />
 
         <button
-          className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-4 h-8 rounded-r-lg hover:scale-110"
-          onClick={addNumber}
+          className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-4 h-[26px] rounded-r-lg hover:scale-110"
+          onClick={() =>
+            addNumber(inputArray1, setInputArray1, setArray1, array1)
+          }
         >
           ➕
         </button>
         <button
-          className="bg-red-800 hover:bg-red-600 text-white font-bold ml-4 px-1 h-8 rounded-lg hover:scale-125"
-          onClick={clearCoins}
+          className="bg-red-800 hover:bg-red-600 text-white font-bold ml-4 px-1 h-[26px] rounded-lg hover:scale-125"
+          onClick={() => clearCoins(setArray1, setInputArray1)}
+        >
+          🗑️
+        </button>
+
+        <input
+          className="appearance-none h-6 w-5/12 bg-gray-100 text-gray-700 border border-gray-500 py-3 px-4 leading-tight focus:outline-none focus:bg-white rounded-l-lg"
+          value={inputArray2}
+          type="number"
+          onChange={() => handleChange(event, setInputArray2)}
+          onKeyDown={(e) =>
+            e.key === "Enter"
+              ? addNumber(inputArray2, setInputArray2, setArray2, array2)
+              : null
+          }
+          placeholder="Array 2"
+        />
+
+        <button
+          className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-4 h-[26px] rounded-r-lg hover:scale-110"
+          onClick={() =>
+            addNumber(inputArray2, setInputArray2, setArray2, array2)
+          }
+        >
+          ➕
+        </button>
+        <button
+          className="bg-red-800 hover:bg-red-600 text-white font-bold ml-4 px-1 h-[26px] rounded-lg hover:scale-125"
+          onClick={() => clearCoins(setArray2, setInputArray2)}
         >
           🗑️
         </button>
         <button
-          className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-4 h-8 ml-auto rounded-lg hover:scale-110"
-          onClick={() => calculoMenorCambio()}
+          className="bg-blue-500 hover:bg-blue-400 ml-6  text-white font-bold px-4 h-[26px] rounded-lg hover:scale-110"
+          onClick={smallDiference}
         >
-          calcular
+          Calculate
         </button>
       </div>
 
       {/* Titulo de Tareas */}
-      <div className="w-full text-sm text-left text-gray-500 dark:text-gray-400 flex">
+      <div className="w-full h-[100px] text-sm text-left text-gray-500 dark:text-gray-400 flex items-center">
         <div className="text-sm font-bold text-gray-700 mr-2 rounded-lg bg-slate-200">
-          <p  className="px-2 mb-10 mt-2">
-            Array 1
-          </p>
+          <p className="px-2 mb-6 mt-2">Array 1</p>
 
-          <p  className="px-2 pb-4">
-          Array 2
-          </p>
+          <p className="px-2 pb-4">Array 2</p>
         </div>
 
-        <div className="rounded-lg my-2 bg-blue-200 flex pl-8 h-12">
-          {coins.map((num, numIndex) => (
-            <span
-              key={numIndex}
-              className=" bg-blue-500 text-white px-2 py-2 rounded-md mr-2 my-2 "
-            >
-              {num}
-            </span>
-          ))}
+        <div>
+          <div className="rounded-lg w-[360px]  bg-blue-200 pl-2 h-10 flex items-center">
+            {array1.map((num, numIndex) => (
+              <span
+                key={numIndex}
+                className=" bg-blue-500 text-white font-medium px-[4px] py-[4px] mr-2 rounded-md"
+              >
+                {num}
+              </span>
+            ))}
+          </div>
+          <div className="rounded-lg w-[360px] mt-2 bg-blue-200 h-10 pl-2 flex items-center">
+            {array2.map((num, numIndex) => (
+              <span
+                key={numIndex}
+                className="bg-blue-500 text-white font-medium px-[4px] py-[4px] mr-2 rounded-md"
+              >
+                {num}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="text-sm font-bold text-gray-700 mr-2 w-[80px] ml-2 rounded-lg bg-slate-200">
+          <p className="px-2 mb-4 mt-2">Difference</p>
 
-          <li className="px-6 py-1 font-medium text-gray-900 whitespace-nowrap ml-auto flex items-center">
-            {result}
-          </li>
+          <p className="px-2 pb-2 text-center text-lg">{result}</p>
         </div>
       </div>
     </div>

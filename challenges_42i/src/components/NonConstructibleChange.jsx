@@ -34,7 +34,7 @@ export const NonConstructibleChange = () => {
   // ---- Funciones ----
 
   return (
-    <div className="bg-white w-[550px] h-[340px] ml-10  p-2 shadow-md">
+    <div className="bg-white w-[550px] h-fit ml-10  p-2 shadow-md">
       <h2 className="text-xl font-semibold mb-4 text-center shadow-md rounded-lg bg-slate-400">
         Non-ConstructibleChange
       </h2>
@@ -76,7 +76,7 @@ export const NonConstructibleChange = () => {
           className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-4 h-8 ml-auto rounded-lg hover:scale-110"
           onClick={() => calculoMenorCambio()}
         >
-          calcular
+          Calculate
         </button>
       </div>
 
