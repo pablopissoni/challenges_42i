@@ -4,8 +4,8 @@ import { smallestDifference } from "./Function";
 export const SmallestDiference = () => {
   // ---- Variables de estado ----
   const [result, setResult] = useState(0);
-  const [array1, setArray1] = useState([23, 127, 235, 19, 8]);
-  const [array2, setArray2] = useState([27, 127, 237, 17, 7]);
+  const [array1, setArray1] = useState([]);
+  const [array2, setArray2] = useState([]);
   const [inputArray1, setInputArray1] = useState("");
   const [inputArray2, setInputArray2] = useState("");
 

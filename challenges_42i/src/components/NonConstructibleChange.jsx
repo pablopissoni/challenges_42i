@@ -20,7 +20,7 @@ export const NonConstructibleChange = () => {
   }
 
   function addNumber() {
-    if (input === "") return;
+    if (input === ""  || input < 0) return;
     const numero = parseInt(input);
     setCoins([...coins, numero]);
     setInput("");

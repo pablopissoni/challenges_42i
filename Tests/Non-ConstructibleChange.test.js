@@ -29,4 +29,11 @@ describe('Test Non-ConstructibleChange', () => {
     const resultado = sinCambio(coins)
     expect(resultado).toBe(null) // El resultado debería ser NULL ya que hay valores invalidos
   })
+
+  // valores negativos
+  test('Cambio minimo para arreglo con valores negativos', () => {
+    const coins = [5, 7, 1, 1, 2, 3, -22]
+    const resultado = sinCambio(coins)
+    expect(resultado).toBe(null) // El resultado debería ser NULL ya que hay valores negativos
+  })
 })
