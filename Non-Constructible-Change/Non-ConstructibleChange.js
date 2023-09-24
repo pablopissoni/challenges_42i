@@ -1,6 +1,6 @@
-//? Non-Constructible Change
+// ? Non-Constructible Change
 
-/* Given an array of positive integers representing the values of coins in your possession, write a function that returns the minimum amount of change (the minimum sum of money) that you **cannot** create. 
+/* Given an array of positive integers representing the values of coins in your possession, write a function that returns the minimum amount of change (the minimum sum of money) that you **cannot** create.
 The given coins can have any positive integer value and aren’t necessarily unique (i.e., you can have multiple coins of the same value).
 For example, if you’re given coins = `[1, 2, 5]`, the minimum amount of change that you can’t create is `4`. If you’re given no coins, the minimum amount of change that you can’t create is 1.
 //**Sample Input**
@@ -13,25 +13,25 @@ For example, if you’re given coins = `[1, 2, 5]`, the minimum amount of chang
 //* ---- COINS ----
 
 //* ---- FUNCION ----
-function sinCambio(coins) {
-  const isNumbers = coins.every(coin => typeof(coin) === "number") // Compruebo que los elementos sean numeros
+function sinCambio (coins) {
+  const isNumbers = coins.every(coin => typeof (coin) === 'number') // Compruebo que los elementos sean numeros
   if (!isNumbers) return null // Si hay un valor que no sea numero la funcion retorna NULL
 
   const coinOrder = [...coins]
-  coinOrder.sort((a, b) => a - b); // Ordenar el arreglo en orden ascendente
+  coinOrder.sort((a, b) => a - b) // Ordenar el arreglo en orden ascendente
 
-  let cambioMinimo = 1; // Inicializar el cambio mínimo en 1
+  let cambioMinimo = 1 // Inicializar el cambio mínimo en 1
 
   for (const coin of coinOrder) {
-    if (coin <= cambioMinimo) {// Si la moneda es menor o igual al cambio mínimo
-      cambioMinimo += coin;     // Se le suma la moneda acumulandose por cada iteracion
+    if (coin <= cambioMinimo) { // Si la moneda es menor o igual al cambio mínimo
+      cambioMinimo += coin // Se le suma la moneda acumulandose por cada iteracion
     } else {
       // cuando la moneda es mayor que el cambio mínimo se retorna como el menor valor encontrado
-      return cambioMinimo;
+      return cambioMinimo
     }
   }
 
-  return cambioMinimo;
+  return cambioMinimo
 }
 
-module.exports = sinCambio;
+module.exports = sinCambio
