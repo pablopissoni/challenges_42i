@@ -8,7 +8,7 @@ For example, if you’re given coins = `[1, 2, 5]`, the minimum amount of change
  const coins = [5, 7, 1, 1, 2, 3, 22]; // Result 20
  const coins = [1, 2, 5, ""];         // Result NULL
  const coins = [1, 2, 3, 4];         // Result 11
-*/
+ */
 
 //* ---- COINS ----
 
