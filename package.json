@@ -1,0 +1,22 @@
+{
+  "name": "42i",
+  "version": "1.0.0",
+  "description": "Challenges",
+  "main": "Non-ConstructibleChange.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablopissoni/challenges_42i.git"
+  },
+  "author": "PabloPissoni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablopissoni/challenges_42i/issues"
+  },
+  "homepage": "https://github.com/pablopissoni/challenges_42i#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
