@@ -2,35 +2,33 @@ import { useState } from "react";
 import { nonConstructibleChange } from "./Function";
 export const NonConstructibleChange = () => {
   // ---- Variables de estado ----
-  const [result, setResult] = useState(0);
-  const [coins, setCoins] = useState([]);
-  const [input, setInput] = useState("");
+  const [result, setResult] = useState(0); // Es la variable que se muetra en Front para el resultado
+  const [coins, setCoins] = useState([]); // Acumula uno a uno cada numero en el array
+  const [input, setInput] = useState(""); // Se utiliza para guardar los valores del input
 
   // ---- Funciones ----
-  function calculoMenorCambio() { // Calcula el menor 
+  function calculoMenorCambio() { // Calcula el menor monto no retornable y ese numero setea al hook "result"
     const menorNum = nonConstructibleChange(coins);
     setResult(menorNum);
   }
 
-  function handleChange(e) {
+  function handleChange(e) {  // Maneja los cambios de valor en inputa travez del hook
     const { value } = e.target;
     setInput(value);
-    
   }
 
-  function addNumber() {
-    if (input === ""  || input < 0) return;
+  function addNumber() { // Agrega un numero al array (coins) mientras que no este vacio y sea mayor a 0
+    if (input === "" || input < 0 ) return;
     const numero = parseInt(input);
     setCoins([...coins, numero]);
     setInput("");
   }
 
-  function clearCoins() {
+  function clearCoins() { // Esta funcion vuelve los valores a pordefecto (Coins = [], Result = 0, Input = "")
     setCoins([]);
     setResult(0);
     setInput("");
   }
-  // ---- Funciones ----
 
   return (
     <div className="bg-white w-[550px] h-fit ml-10  p-2 shadow-md">
@@ -54,6 +52,7 @@ export const NonConstructibleChange = () => {
           className="appearance-none h-8 w-5/12 bg-gray-100 text-gray-700 border border-gray-500 py-3 px-4 leading-tight focus:outline-none focus:bg-white rounded-l-lg"
           value={input}
           type="number"
+          min={0}
           onChange={handleChange}
           onKeyDown={(e) => (e.key === "Enter" ? addNumber() : null)}
           placeholder="Ingrese un numero"
