@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { smallestDifference } from "./Function";
 
 export const SmallestDiference = () => {
-  // ---- Variables de estado ----
-  const [result, setResult] = useState(0);
-  const [array1, setArray1] = useState([]);
-  const [array2, setArray2] = useState([]);
-  const [inputArray1, setInputArray1] = useState("");
-  const [inputArray2, setInputArray2] = useState("");
+  // ---- Variables de estado HOOK ----
+  const [result, setResult] = useState(0);  // Aqui setea el resultado final de la operacion 
+  const [array1, setArray1] = useState([]); // Aqui setea los valores para el array 1
+  const [array2, setArray2] = useState([]); // Aqui setea los valores para el array 2
+  const [inputArray1, setInputArray1] = useState(""); // Aqui manejo el valor del input para el array 1
+  const [inputArray2, setInputArray2] = useState(""); // Aqui manejo el valor del input para el array 2
 
   // ---- Funciones ----
   function smallDiference() { // Esta funcion guarda el valor de la menor diferencia en el Hook "result"
@@ -17,7 +17,7 @@ export const SmallestDiference = () => {
 
   function handleChange(e, setInputArray) { // Maneja el valor de input que se este modificando
     const { value } = e.target;
-    setInputArray(value);   // Setea el valor "inputArray"
+    setInputArray(value);   // Setea al hook el valor a "inputArray"
   }
 
 /**
