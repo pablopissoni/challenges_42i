@@ -33,7 +33,6 @@ export const SmallestDiference = () => {
 
   function clearCoins(setArray, setInputArray) {
     setArray([]);
-    // setArray2([]);
     setResult(0);
     setInputArray("");
   }

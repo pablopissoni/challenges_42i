@@ -1,5 +1,5 @@
 /* global describe, test, expect */
-const nonConstructibleChange = require('../Non-Constructible-Change/Non-ConstructibleChange').default
+import { nonConstructibleChange } from "../src/components/Function.js";
 
 describe('Test Non-ConstructibleChange', () => {
   // Array vacio

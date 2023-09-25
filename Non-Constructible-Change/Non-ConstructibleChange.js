@@ -13,7 +13,7 @@ For example, if you’re given coins = `[1, 2, 5]`, the minimum amount of change
 //* ---- COINS ----
 
 //* ---- FUNCION ----
-function sinCambio (coins) {
+function nonConstructibleChange (coins) {
   const isNumbers = coins.every(coin => typeof (coin) === 'number' && coin > 0) // Compruebo que los elementos sean numeros y que sean mayor a 0
   if (!isNumbers) return null // Si hay un valor que no sea numero la funcion retorna NULL
 
@@ -33,6 +33,5 @@ function sinCambio (coins) {
 
   return cambioMinimo
 }
-const result = sinCambio([5, 7, 1, 1, 2, 3, 22])
-console.log(result)
-module.exports = sinCambio
+
+module.exports = nonConstructibleChange

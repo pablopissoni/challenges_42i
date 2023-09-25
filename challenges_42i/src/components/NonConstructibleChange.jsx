@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { sinCambio } from "./Function";
+import { nonConstructibleChange } from "./Function";
 
 export const NonConstructibleChange = () => {
   // ---- Variables de estado ----
@@ -9,7 +9,7 @@ export const NonConstructibleChange = () => {
 
   // ---- Funciones ----
   function calculoMenorCambio() {
-    const menorNum = sinCambio(coins);
+    const menorNum = nonConstructibleChange(coins);
     setResult(menorNum);
   }
 

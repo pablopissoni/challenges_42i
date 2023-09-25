@@ -1,6 +1,6 @@
 // Menor cambio no disponible - Non-ConstructibleChange
-export function sinCambio(coins) {
-  const isNumbers = coins.every((coin) => typeof coin === "number") // Compruebo que los elementos sean numeros
+export function nonConstructibleChange(coins) {
+  const isNumbers = coins.every((coin) => typeof coin === 'number' && coin > 0) // Compruebo que los elementos sean numeros y que sean mayor a 0
   if (!isNumbers) return null; // Si hay un valor que no sea numero la funcion retorna NULL
 
   const coinOrder = [...coins];
