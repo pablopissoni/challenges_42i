@@ -5,7 +5,7 @@
   <br>
 </h1>
 
-![screenshot](https://github.com/pablopissoni/challenges_42i/blob/main/challenges_42i/screenshots/Front_Ejemplos.png?raw=true)
+![screenshot](https://github.com/pablopissoni/challenges_42i/blob/main/screenshots/Front_Ejemplos.png?raw=true?raw=true)
 
 ## Challenge
 The challenge consists of 2 exercises: Smallest Difference and Non-Constructible Change
@@ -52,5 +52,5 @@ You can run the tests this way:
 # Run test
 $ npm test
 ```
-![screenshot](https://github.com/pablopissoni/challenges_42i/blob/main/challenges_42i/screenshots/test.png?raw=true?raw=true)
+![screenshot](https://github.com/pablopissoni/challenges_42i/blob/main/screenshots/test.png?raw=true?raw=true)
 ---
