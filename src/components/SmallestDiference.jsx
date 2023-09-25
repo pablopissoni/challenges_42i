@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { smallestDifference } from "./Function";
 
 export const SmallestDiference = () => {
