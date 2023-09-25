@@ -1,5 +1,4 @@
 /* global describe, test, expect */
-// const smallestDifference = require('../Smallest-Difference/SmallestDiference')
 import { smallestDifference } from "../src/components/Function.js";
 
 describe('Test de smallestDifference', () => {

@@ -1,5 +1,5 @@
-/* global describe, test, expect */
-const nonConstructibleChange = require('../Non-Constructible-Change/Non-ConstructibleChange').default
+/* global describe, test, expect, nonConstructibleChange */
+const nonConstructibleChange = require('../Non-Constructible-Change/Non-ConstructibleChange')
 
 describe('Test Non-ConstructibleChange', () => {
   // Array vacio
