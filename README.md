@@ -30,16 +30,16 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/pablopissoni/challenges_42i.git
+ git clone https://github.com/pablopissoni/challenges_42i.git
 
 # Go into the repository
-$ cd challenges_42i
+ cd challenges_42i
 
 # Install dependencies
-$ npm install
+ npm install
 
 # Run the app
-$ npm start
+ npm start
 ```
 
 > Start in ➜  Local:   http://localhost:5173/
