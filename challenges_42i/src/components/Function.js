@@ -1,13 +1,16 @@
-// Menor cambio no disponible - Non-ConstructibleChange
+/**
+ * Esta funcion busca el menor monto no disponible
+ * @param {Array} coins Array de numeros moneda
+ * @returns Retorna un numero o null si no es valido
+ */
 export function nonConstructibleChange(coins) {
   const isNumbers = coins.every((coin) => typeof coin === 'number' && coin > 0) // Compruebo que los elementos sean numeros y que sean mayor a 0
   if (!isNumbers) return null; // Si hay un valor que no sea numero la funcion retorna NULL
 
-  const coinOrder = [...coins];
+  const coinOrder = [...coins]; // Realizo una copia del arreglo original
   coinOrder.sort((a, b) => a - b); // Ordenar el arreglo en orden ascendente
-
+  
   let cambioMinimo = 1; // Inicializar el cambio mínimo en 1
-
   for (const coin of coinOrder) {
     if (coin <= cambioMinimo) {
       // Si la moneda es menor o igual al cambio mínimo
@@ -17,11 +20,16 @@ export function nonConstructibleChange(coins) {
       return cambioMinimo;
     }
   }
-
   return cambioMinimo;
 }
 
 // Menor diferencia - smallestDifference
+/**
+ * Esta funcion busca la menor diferencia numerica entre el Array A y Array B
+ * @param {Array} a Conjunto de numeros A
+ * @param {Array} b Conjunto de numeros B
+ * @returns Retorna un numero o null
+ */
 export function smallestDifference(a, b) {
   // Esta funcion toma 2 ARRAYS como parametro
   let result = Infinity; // Se inicializa en infinito para que cualquier valor comparativo sea menor a este

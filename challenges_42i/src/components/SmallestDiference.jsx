@@ -10,20 +10,24 @@ export const SmallestDiference = () => {
   const [inputArray2, setInputArray2] = useState("");
 
   // ---- Funciones ----
-  function smallDiference() {
-    const result = smallestDifference(array1, array2);
-    setResult(result);
+  function smallDiference() { // Esta funcion guarda el valor de la menor diferencia en el Hook "result"
+    const num = smallestDifference(array1, array2);
+    setResult(num);
   }
 
-  function handleChange(e, setInputArray) {
-    const { value, name } = e.target;
-    console.log(
-      "🚀 ~ file: SmallestDiference.jsx:20 ~ handleChange ~ name:",
-      name
-    );
-    setInputArray(value);
+  function handleChange(e, setInputArray) { // Maneja el valor de input que se este modificando
+    const { value } = e.target;
+    setInputArray(value);   // Setea el valor "inputArray"
   }
 
+/**
+ * Agrega un número al array proporcionado y actualiza el estado del input a un string vacio.
+ * @param {string} inputArray - El valor del input que contiene el número a agregar.
+ * @param {function} setInputArray - La función para actualizar el estado del input.
+ * @param {function} setArray - La función para actualizar el estado del array.
+ * @param {Array} array - El array al que se agregarán los números.
+ * @returns Retorna un array
+ */
   function addNumber(inputArray, setInputArray, setArray, array) {
     if (inputArray === "") return;
     const numero = parseInt(inputArray);
@@ -31,19 +35,18 @@ export const SmallestDiference = () => {
     setInputArray("");
   }
 
-  function clearCoins(setArray, setInputArray) {
-    setArray([]);
-    setResult(0);
-    setInputArray("");
+  function clearCoins(setArray, setInputArray) { // vacia los argumentos proporcionados (array, result y input)
+    setArray([]);       // Setea el Hook "array" a un array vacio
+    setResult(0);       // Setea el Hook "result" a 0
+    setInputArray("");  // Setea el Hook "input" a un string vacio
   }
-  // ---- Funciones ----
 
   return (
     <div className="bg-white w-[550px] h-[340px] ml-10  p-2 shadow-md">
       <h2 className="text-xl font-semibold mb-4 text-center shadow-md rounded-lg bg-slate-400">
         Smallest Difference
       </h2>
-      {/* ---------- NUEVA TAREA ---------- */}
+      {/* ---------- Exercise ---------- */}
       <div className="m-2 flex items-center">
         <p className="font-semibold my-2">
           Given two arrays of integers, compute the pair of values (one value in
@@ -52,7 +55,7 @@ export const SmallestDiference = () => {
         </p>
       </div>
 
-      {/* ---------- NUEVA TAREA ---------- */}
+      {/* ---------- Inputs buttons ---------- */}
       <div className="m-2 items-center">
         <input
           className="appearance-none h-6 mb-2  w-5/12 bg-gray-100 text-gray-700 border border-gray-500 py-3 px-4 leading-tight focus:outline-none focus:bg-white rounded-l-lg"
@@ -117,7 +120,7 @@ export const SmallestDiference = () => {
         </button>
       </div>
 
-      {/* Titulo de Tareas */}
+      {/* ---- Array ---- */}
       <div className="w-full h-[100px] text-sm text-left text-gray-500 dark:text-gray-400 flex items-center">
         <div className="text-sm font-bold text-gray-700 mr-2 rounded-lg bg-slate-200">
           <p className="px-2 mb-6 mt-2">Array 1</p>

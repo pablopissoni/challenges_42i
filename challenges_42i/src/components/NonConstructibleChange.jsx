@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { nonConstructibleChange } from "./Function";
-
 export const NonConstructibleChange = () => {
   // ---- Variables de estado ----
   const [result, setResult] = useState(0);
@@ -8,7 +7,7 @@ export const NonConstructibleChange = () => {
   const [input, setInput] = useState("");
 
   // ---- Funciones ----
-  function calculoMenorCambio() {
+  function calculoMenorCambio() { // Calcula el menor 
     const menorNum = nonConstructibleChange(coins);
     setResult(menorNum);
   }
@@ -38,7 +37,7 @@ export const NonConstructibleChange = () => {
       <h2 className="text-xl font-semibold mb-4 text-center shadow-md rounded-lg bg-slate-400">
         Non-ConstructibleChange
       </h2>
-      {/* ---------- NUEVA TAREA ---------- */}
+      {/* ---------- Exercise ---------- */}
       <div className="m-2 flex items-center">
         <p className="font-semibold my-2">
           Given an array of positive integers representing the values of coins
@@ -49,7 +48,7 @@ export const NonConstructibleChange = () => {
         </p>
       </div>
 
-      {/* ---------- NUEVA TAREA ---------- */}
+      {/* ---------- Input and buttons ---------- */}
       <div className="m-2 flex items-center">
         <input
           className="appearance-none h-8 w-5/12 bg-gray-100 text-gray-700 border border-gray-500 py-3 px-4 leading-tight focus:outline-none focus:bg-white rounded-l-lg"
@@ -80,7 +79,7 @@ export const NonConstructibleChange = () => {
         </button>
       </div>
 
-      {/* Titulo de Tareas */}
+      {/* ---- Title Table ---- */}
       <div className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
         <div className="text-sm font-bold text-gray-700  rounded-lg flex bg-slate-200">
           <p className="ml-8 px-4 py-3 flex-1">
