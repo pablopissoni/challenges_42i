@@ -46,22 +46,16 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ## Running docker
 
-You can run the localy without docker run
-
-```bash
-$ npm start
-```
-
 build the Docker image
 
 ```bash
-$ docker build -t <username>/challenge-42-web
+$ docker build -t <username>/challenge-42i-docker
 ```
 
 to load the docker image use
 
 ```bash
-$ docker run -p 3000:5173 -d <username>/challenge-42-web
+$ docker run -p 8080:8080 -d <username>/challenge-42i-docker
 ```
 ## Testing
 
